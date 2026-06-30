@@ -3,8 +3,8 @@ include(CPM)
 # download JUCE
 CPMAddPackage(
   NAME juce
-  GITHUB_REPOSITORY juce-framework/juce
-  GIT_TAG 8.0.10
+  GITHUB_REPOSITORY RamerDigital/Ramer-JUCE
+  GIT_TAG main
 )
 
 include(AddJUCEModules)

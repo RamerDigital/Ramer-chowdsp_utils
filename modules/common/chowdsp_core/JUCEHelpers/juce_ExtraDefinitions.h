@@ -97,7 +97,7 @@ private:                                         \
 #define JUCE_USE_VDSP_FRAMEWORK 1
 #endif
 
-#if __ARM_NEON__ && ! (JUCE_USE_VDSP_FRAMEWORK || defined(JUCE_USE_ARM_NEON))
+#if __ARM_NEON__ && ! defined(JUCE_USE_ARM_NEON)
 #define JUCE_USE_ARM_NEON 1
 #endif
 

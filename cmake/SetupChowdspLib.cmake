@@ -65,6 +65,10 @@ function(setup_chowdsp_lib lib_name)
 
     if(APPLE)
         target_link_libraries(${lib_name} PUBLIC "-framework Accelerate")
+        if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+            target_compile_options(${lib_name} PUBLIC -mcpu=apple-m1 -flto=thin)
+            target_link_options(${lib_name} PUBLIC -flto=thin)
+        endif()
     elseif(UNIX)
         # We need to link to pthread explicitly on Linux/GCC
         set(THREADS_PREFER_PTHREAD_FLAG ON)

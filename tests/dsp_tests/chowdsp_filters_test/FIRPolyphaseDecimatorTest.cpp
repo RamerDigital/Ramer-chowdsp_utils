@@ -1,5 +1,6 @@
 #include <CatchUtils.h>
 #include <chowdsp_filters/chowdsp_filters.h>
+#include <array>
 
 template <size_t filterOrder, size_t decimationFactor, size_t maxNumChannels = chowdsp::dynamicChannelCount>
 static void decimationFilterCompare (int numChannels)
@@ -12,7 +13,7 @@ static void decimationFilterCompare (int numChannels)
         for (auto [n, x] : chowdsp::enumerate (data))
             x = static_cast<float> (n + (size_t) ch);
 
-    std::vector coeffs ((size_t) filterOrder, 0.0f);
+    std::array<float, filterOrder> coeffs {};
     for (auto [k, h] : chowdsp::enumerate (coeffs))
         h = static_cast<float> (k);
 
