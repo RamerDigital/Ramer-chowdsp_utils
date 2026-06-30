@@ -12,7 +12,7 @@ if(NOT CHOWDSP_BUILD_LIVE_GUI_TEST)
     message(STATUS "Live GUI test is not being built... skipping juceaide!")
     set(JUCE_MODULES_ONLY ON CACHE INTERNAL "Only configure the JUCE modules")
 endif()
-add_subdirectory(${CMAKE_SOURCE_DIR}/../../JUCE JUCE)
+add_subdirectory(${CMAKE_SOURCE_DIR}/../Ramer-JUCE JUCE)
 subproject_version(JUCE juce_version)
 message(STATUS "VERSION for JUCE: ${juce_version}")
 
