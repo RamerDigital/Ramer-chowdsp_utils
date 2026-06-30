@@ -10,3 +10,4 @@ docs/
 Testing/
 
 .DS_Store
+/.build/
